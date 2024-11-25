@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uf</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Matrix Rain -->
+    <!-- Video Background -->
+    <video autoplay loop muted id="bg-video">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <!-- Main Content Container -->
+    <div id="container">
+        <div id="header">
+            <div class="logo">uf</div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">BreachForums</a>
+                <a href="#">Doxbin</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="sidebar">
+                <div class="profile-pic">
+                    <img src="https://media.discordapp.net/attachments/1309616290037497908/1310194853753393192/54cc56f4e169bb0f1905e9b56bc1f093.png?ex=6744558b&is=6743040b&hm=a65047f10a47b18918988e842a4687891cac5f3a3e9e175fa9483565eb5bcba3&=&format=webp&quality=lossless&width=476&height=476" alt="Profile Picture">
+                </div>
+                <div class="ascii-art"> uf</div>
+            </div>
+
+            <div class="main-content">
+                <div class="error-box">
+                    ERROR - Could not authenticate user. Only partial data has been loaded.
+                </div>
+                <div class="profile-section">
+                    <h3>c5e</h3>
+                    <p>Username: uf</p>
+                    <p>Email:c5e@fbi.systems</p>
+                    <p>BreachForums: <a href="#">uf</a></p>
+                    <p>Doxbin: <a href="#">uf</a></p>
+                    
+                </div>
+
+                <div class="system-announcement">
+                    <h3>System Announcement</h3>
+                    <p>hi am uf i am a pro hacker</p>
+                </div>
+
+                <div class="about-section">
+                    <h3>About Me</h3>
+                    <p>you’ve made a huge mistake. you probably don’t even understand the basics of cybersecurity. i dual-boot linux so i can run my own scripts, and trust me, i know exactly what i’m doing. by responding to my comment without masking your connection, you’ve exposed yourself.
+                        i’m already tracking your ip. that’s internet protocol, by the way, in case you didn’t know. once i have your ip, i can easily infiltrate your system, install a backdoor, and get full access to your machine. your email? i’ve got that too
+                        don’t even think about turning off your computer. i’ve routed a malware payload to your power system that’ll allow me to turn it on anytime i want. i could easily access your credit card information as well—better cancel those cards now.
+                        if i wanted, i could release all your personal details onto my secure irc channel or a doxbin-like community, and trust me, that could attract the wrong attention.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>&copy; uf</p>
+        </div>
+    </div>
+    <audio id="audio" preload="auto">
+        <source src="music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Function to change the status text
+        const statusMessages = ["Online", "Busy", "Idle", "Away", "Do Not Disturb"];
+        let currentStatus = 0;
+
+        function changeStatus() {
+            currentStatus = (currentStatus + 1) % statusMessages.length;
+            const statusElement = document.getElementById("status-text");
+            statusElement.textContent = `Status: ${statusMessages[currentStatus]}`;
+
+            // Change the browser tab title with current status
+            document.title = `${statusMessages[currentStatus]} | Hacker Terminal`;
+        }
+
+        // Change the status every 3 seconds
+        setInterval(changeStatus, 3000);
+
+        // Audio playing logic
+        let isAudioPlayed = false;  // Flag to ensure the audio can only be played once per page load
+
+        // Add click event listener to the body
+        document.body.addEventListener("click", function () {
+            if (!isAudioPlayed) {
+                const audio = document.getElementById("audio");
+                audio.play();  // Play the audio when the page is clicked
+                isAudioPlayed = true;  // Set flag to true so it can't play again until page refresh
+            }
+        });
+    </script>ssssssss
+    <script src="script.js"></script>
+</body>
+</html>

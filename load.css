@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+    background-color: #000;
+    color: #00e1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #00ffff;
+    font-size: 2em;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #00ffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-message, #loading-submessage {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#content.hidden {
+    display: none;
+}
+
+#content-inner {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-shadow: 0 0 15px #00e1ff;
+    border: 2px solid #00e1ff;
+    border-radius: 10px;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #000;
+    color: #00e1ff;
+    font-size: 1.5em;
+    border-bottom: 2px solid #00e1ff;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #00e1ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #00e1ff, 0 0 10px #00e1ff;
+}
+
+nav a:hover {
+    color: #ff4500;
+    text-shadow: 0 0 15px #ff4500, 0 0 30px #ff4500;
+}
+
+.terminal {
+    background-color: #111;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #00e1ff;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #8f8f8f;
+    text-shadow: 0 0 5px #00e1ff;
+}
+
+footer:hover {
+    color: #f1f1f1;
+    text-shadow: 0 0 10px #f1f1f1;
+}
