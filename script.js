@@ -1,27 +1,29 @@
-// Script to generate the falling Matrix code effect
+const typingEffectElement = document.querySelector('.typing-effect');
+const aboutSection = document.querySelector('.about-section');
+const typingText = `you’ve made a huge mistake. you probably don’t even understand the basics of cybersecurity. i dual-boot linux so i can run my own scripts, and trust me, i know exactly what i’m doing. by responding to my comment without masking your connection, you’ve exposed yourself.
+i’m already tracking your ip. that’s internet protocol, by the way, in case you didn’t know. once i have your ip, i can easily infiltrate your system, install a backdoor, and get full access to your machine. your email? i’ve got that too
+don’t even think about turning off your computer. i’ve routed a malware payload to your power system that’ll allow me to turn it on anytime i want. i could easily access your credit card information as well—better cancel those cards now.
+if i wanted, i could release all your personal details onto my secure irc channel or a doxbin-like community, and trust me, that could attract the wrong attention.`;
 
-const matrixRain = document.getElementById('matrixRain');
-const characters = ['|', '/', '\\', '!', '@', '#', '$', '%', '&', '*', '1', '0', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-function createFallingCode() {
-    // Randomly choose a character from the list
-    const char = characters[Math.floor(Math.random() * characters.length)];
-    const xPosition = Math.floor(Math.random() * window.innerWidth);
-    const delay = Math.random() * 5;
-
-    const fallingCodeElement = document.createElement('div');
-    fallingCodeElement.classList.add('falling-code');
-    fallingCodeElement.style.left = `${xPosition}px`;
-    fallingCodeElement.style.animationDelay = `${delay}s`;
-    fallingCodeElement.textContent = char;
-
-    matrixRain.appendChild(fallingCodeElement);
-
-    // Remove the element after animation ends
-    setTimeout(() => {
-        matrixRain.removeChild(fallingCodeElement);
-    }, 5000); // Matches animation duration
+let index = 0;
+function type() {
+    if (index < typingText.length) {
+        typingEffectElement.innerHTML += typingText.charAt(index);
+        index++;
+        setTimeout(type, 50);
+    }
 }
 
-// Continuously generate falling code
-setInterval(createFallingCode, 50); // Create a new falling code every 50ms
+function adjustFontSize() {
+    const containerHeight = aboutSection.offsetHeight;
+    const contentHeight = typingEffectElement.scrollHeight;
+
+    if (contentHeight > containerHeight) {
+        let newFontSize = parseFloat(window.getComputedStyle(typingEffectElement).fontSize);
+        newFontSize -= 1;
+        typingEffectElement.style.fontSize = `${newFontSize}px`;
+    }
+}
+
+type();
+setInterval(adjustFontSize, 200);
