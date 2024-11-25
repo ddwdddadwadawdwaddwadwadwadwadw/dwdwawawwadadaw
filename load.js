@@ -10,6 +10,6 @@ window.onload = () => {
     }, 3000);
 
     document.getElementById("continue-btn").addEventListener("click", function () {
-        window.location.href = "index.html";
+        window.location.href = "main.html";
     });
 };
